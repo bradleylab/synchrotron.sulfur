@@ -26,12 +26,12 @@ roi.data$component <- components$component[match(roi.data$roi.new, components$ro
 
 #qqnorm plots
 gg.qqnorm <- ggplot(roi.data) + geom_qq(aes(sample = ppm), size = 0.5) + facet_wrap(~roi.new, scales = "free") + labs(title = "QQ Norm for each ROI")
-gg.qqnorm
+ggsave("S2.qqnormplots.pdf", plot = gg.qqnorm)
 
 #boxplots
 gg.boxplot <- ggplot(roi.data, aes(factor(roi.new), ppm)) + labs(title = "ppm distributions") + xlab("ROI") + ylab("ppm sulfate") + scale_fill_brewer(palette="Dark2") 
 gg.boxplot <- gg.boxplot + geom_boxplot(notch = TRUE, aes(fill = factor(component)), outlier.size = 0.5)  + guides(fill=guide_legend(title="Component"))
-gg.boxplot
+ggsave("S3.boxplots.pdf", plot = gg.boxplot)
 
 #histograms
 x.low <- -200
@@ -57,4 +57,5 @@ dens.curves$y  <- dnorm(dens.curves$x, mean = roi.summary[dens.curves$roi.new,]$
 gg.histograms <- ggplot(roi.data) + facet_wrap(~roi.new) 
 gg.histograms <- gg.histograms + geom_histogram(aes(x = ppm, y = ..density..), binwidth = 10, fill="grey60", linetype = "blank") + labs(x = "sulfate (ppm)") + xlim(x.low, x.high) + ylim(0, 0.025)
 gg.histograms <- gg.histograms + geom_line(data = dens.curves, aes(x = x, y = y), color = "red")
+ggsave("S4.histograms.pdf", plot = gg.histograms)
 #
