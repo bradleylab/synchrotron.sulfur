@@ -1,4 +1,5 @@
 **Micron-scale spatial distribution and speciation of sulfate in sedimentary carbonates**
+
 Catherine V. Rose, Samuel M. Webb, Matthew Newville, Antonio Lanzirotti, Jocelyn A. Richardson, Nicholas J. Tosca, Jeffrey G. Catalano, Alexander S. Bradley, David A. Fike
 
 These files contain the R code used to process synchrotron sulfate concentrations, and compare the  and compare the concentrations among the various ROIs
