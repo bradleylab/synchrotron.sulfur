@@ -11,6 +11,7 @@ outlierKD <- function(dt, var) {
   assign(as.character(as.list(match.call())$dt), dt, envir = .GlobalEnv)
   return(invisible(dt))
 }
+#modified from https://www.r-bloggers.com/identify-describe-plot-and-remove-the-outliers-from-the-dataset/
 
 
 ml.est <- function(roi.in){
